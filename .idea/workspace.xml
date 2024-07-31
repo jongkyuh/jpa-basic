@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정">
+    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="2. JPA 실행 테스트 및 영속성 컨텍스트 동작 확인&#10;&#10;영속성 컨텍스트를 사용하게 될때의 주요 이점&#10;1차 캐시, 영속 엔티티의 동일성 보장, 쓰기지연, 변경감지 등을 예제를 통해 학습했다. main 에서 확인하며 지워서 코드가 남아있지 않지만, 노션 페이지의 영속성 컨텍스트 1,2페이지를 통해서 코드를 확인 할 수 있다.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +80,8 @@
       <option name="presentableId" value="Default" />
       <updated>1722257103774</updated>
       <workItem from="1722257105114" duration="1408000" />
-      <workItem from="1722337294181" duration="5864000" />
+      <workItem from="1722337294181" duration="6463000" />
+      <workItem from="1722430525120" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정">
       <created>1722258401608</created>
@@ -91,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722258401608</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2. JPA 실행 테스트 및 영속성 컨텍스트 동작 확인&#10;&#10;영속성 컨텍스트를 사용하게 될때의 주요 이점&#10;1차 캐시, 영속 엔티티의 동일성 보장, 쓰기지연, 변경감지 등을 예제를 통해 학습했다. main 에서 확인하며 지워서 코드가 남아있지 않지만, 노션 페이지의 영속성 컨텍스트 1,2페이지를 통해서 코드를 확인 할 수 있다.">
+      <created>1722344493232</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722344493232</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +105,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정" />
+    <MESSAGE value="2. JPA 실행 테스트 및 영속성 컨텍스트 동작 확인&#10;&#10;영속성 컨텍스트를 사용하게 될때의 주요 이점&#10;1차 캐시, 영속 엔티티의 동일성 보장, 쓰기지연, 변경감지 등을 예제를 통해 학습했다. main 에서 확인하며 지워서 코드가 남아있지 않지만, 노션 페이지의 영속성 컨텍스트 1,2페이지를 통해서 코드를 확인 할 수 있다." />
+    <option name="LAST_COMMIT_MESSAGE" value="2. JPA 실행 테스트 및 영속성 컨텍스트 동작 확인&#10;&#10;영속성 컨텍스트를 사용하게 될때의 주요 이점&#10;1차 캐시, 영속 엔티티의 동일성 보장, 쓰기지연, 변경감지 등을 예제를 통해 학습했다. main 에서 확인하며 지워서 코드가 남아있지 않지만, 노션 페이지의 영속성 컨텍스트 1,2페이지를 통해서 코드를 확인 할 수 있다." />
   </component>
 </project>
