@@ -21,10 +21,10 @@ public class JpaMain {
         //code.....
         try{
             //영속
-           Member member = new Member(200L,"member200");
-           em.persist(member);
+            Member member = em.find(Member.class, 150L);
+            member.setName("CCCCC");
 
-           em.flush();  // 이 시점에 즉시 DB에 쿼리문이 나가서 반영된다.
+            em.detach(member);  // 준영속 상태(JPA에서 이제 관리하지 않는다.)
 
             System.out.println("================================");
             // 커밋시점에 반영
