@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="3. 준영속 &#10;&#10;준영속상태는 영속 상태의 엔티티를 영속성 컨텍스트에서 분리하는 것으로 준영속 상태의 엔티티를 변경해도 반영되지 않는다. &#10;&#10;준영속 상태를 만드는 방법은&#10;em.detach(entity). em.clear(),em.close()가 있다.">
+    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="4. 필드 매핑&#10;&#10;필드 매핑에 대한 예제, 노션링크에 자세한 코드 설명이 있습니다.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hellojpa/JpaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hellojpa/JpaMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hellojpa/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hellojpa/Member.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +97,7 @@
       <workItem from="1722430525120" duration="94000" />
       <workItem from="1722430775175" duration="3189000" />
       <workItem from="1722514368547" duration="1976000" />
+      <workItem from="1722688952919" duration="4168000" />
     </task>
     <task id="LOCAL-00001" summary="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정">
       <created>1722258401608</created>
@@ -127,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722431752650</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="4. 필드 매핑&#10;&#10;필드 매핑에 대한 예제, 노션링크에 자세한 코드 설명이 있습니다.">
+      <created>1722689064435</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722689064435</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +144,7 @@
     <MESSAGE value="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정" />
     <MESSAGE value="2. JPA 실행 테스트 및 영속성 컨텍스트 동작 확인&#10;&#10;영속성 컨텍스트를 사용하게 될때의 주요 이점&#10;1차 캐시, 영속 엔티티의 동일성 보장, 쓰기지연, 변경감지 등을 예제를 통해 학습했다. main 에서 확인하며 지워서 코드가 남아있지 않지만, 노션 페이지의 영속성 컨텍스트 1,2페이지를 통해서 코드를 확인 할 수 있다." />
     <MESSAGE value="3. 준영속 &#10;&#10;준영속상태는 영속 상태의 엔티티를 영속성 컨텍스트에서 분리하는 것으로 준영속 상태의 엔티티를 변경해도 반영되지 않는다. &#10;&#10;준영속 상태를 만드는 방법은&#10;em.detach(entity). em.clear(),em.close()가 있다." />
-    <option name="LAST_COMMIT_MESSAGE" value="3. 준영속 &#10;&#10;준영속상태는 영속 상태의 엔티티를 영속성 컨텍스트에서 분리하는 것으로 준영속 상태의 엔티티를 변경해도 반영되지 않는다. &#10;&#10;준영속 상태를 만드는 방법은&#10;em.detach(entity). em.clear(),em.close()가 있다." />
+    <MESSAGE value="4. 필드 매핑&#10;&#10;필드 매핑에 대한 예제, 노션링크에 자세한 코드 설명이 있습니다." />
+    <option name="LAST_COMMIT_MESSAGE" value="4. 필드 매핑&#10;&#10;필드 매핑에 대한 예제, 노션링크에 자세한 코드 설명이 있습니다." />
   </component>
 </project>
