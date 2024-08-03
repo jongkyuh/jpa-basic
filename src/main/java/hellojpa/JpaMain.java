@@ -20,13 +20,12 @@ public class JpaMain {
 
         //code.....
         try{
-            //영속
-            Member member = em.find(Member.class, 150L);
-            member.setName("CCCCC");
+            Member member = new Member();
+            member.setId(3L);
+            member.setUsername("A");
+            member.setRoleType(RoleType.GUSET);
 
-            em.detach(member);  // 준영속 상태(JPA에서 이제 관리하지 않는다.)
-
-            System.out.println("================================");
+            em.persist(member);
             // 커밋시점에 반영
             tx.commit();
         }catch (Exception e){
