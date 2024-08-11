@@ -19,30 +19,37 @@ public class JpaMain {
         tx.begin();
 
         //code.....
-        try{
-            Member member1 = new Member();
-            Member member2 = new Member();
-            Member member3 = new Member();
-         //   member.setId("ID_A");
-            member1.setUsername("A");
-            member2.setUsername("A");
-            member3.setUsername("A");
+        try {
+            // 저장
 
-            System.out.println("============================================");
+            Team team = new Team();
+            team.setName("TeamA");
+            //   team.getMembers().add(member);
+            em.persist(team);
 
-            em.persist(member1);
-            em.persist(member2);
-            em.persist(member3);
+            Member member = new Member();
+            member.setUsername("member1");
+            //   member.changeTeam(team);     //team의 값을 입력하지않음, 편의메소드는 한쪽에만 지정
+            em.persist(member);
 
+            team.addMember(member);
+//            team.getMembers().add(member);
 
-            System.out.println("============================================");
-            System.out.println("member = " + member1.getId());
-            System.out.println("커밋");
+//            em.flush();
+//            em.clear();
+
+            Team findTeam = em.find(Team.class, team.getId());  // 1차 캐시
+
+            System.out.println("+++++++++++++++");
+            List<Member> members = findTeam.getMembers();
+            System.out.println("findTeam = " + findTeam);
+            System.out.println("+++++++++++++++");
+
             // 커밋시점에 반영
             tx.commit();
-        }catch (Exception e){
+        } catch (Exception e) {
             tx.rollback();
-        }finally {
+        } finally {
             em.close();
 
         }

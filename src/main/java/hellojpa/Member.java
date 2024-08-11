@@ -7,20 +7,25 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
-@SequenceGenerator(
-        name = "MEMBER_SEQ_GENERATOR",
-        sequenceName = "MEMBER_SEQ", //매핑할 데이터베이스 시퀀스 이름
-        initialValue = 1, allocationSize = 50)
 public class Member {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator = "MEMBER_SEQ_GENERATOR")
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "MEMBER_ID")
     private Long id;
 
+//    @Column(name = "TEAM_ID")    //참조로 가져간게 아니라 그대로 가져갔다.
+//    private Long teamId;
 
-    @Column   //객체는 username, db는 name. not null 제약이 걸린다.
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+    @Column(name = "USERNAME")
     private String username;
+
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
 
     public Long getId() {
         return id;
@@ -30,6 +35,12 @@ public class Member {
         this.id = id;
     }
 
+    public Team getTeam() {
+        return team;
+    }
+
+
+
     public String getUsername() {
         return username;
     }
@@ -38,8 +49,16 @@ public class Member {
         this.username = username;
     }
 
-    public Member() {
+    public void setTeam(Team team) {
+        this.team = team;
     }
 
-
+//    @Override
+//    public String toString() {
+//        return "Member{" +
+//                "id=" + id +
+//                ", team=" + team +
+//                ", username='" + username + '\'' +
+//                '}';
+//    }
 }
