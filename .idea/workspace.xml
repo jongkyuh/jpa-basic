@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="5. 일대일 매핑&#10;&#10;일대일 매핑을 할 때 주테이블이 연관관계의 주인이 되는경우와 대상 테이블이 되는 경우 두가지를 살펴본다.">
+    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="6. 다대일 매핑&#10;&#10;다대일 매핑을 @JoinTable 어노테이션을 활용하면 된다. 그러나 이렇게 하면 딱 FK값들만 설정되기에 컬럼을 추가할 수 없다. 그래서 아예 테이블을 하나 만들어 다대일,일대다 관계로 푸는게 맞다">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hellojpa/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hellojpa/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/jongk/OneDrive/Desktop/김영한 로드맵/자바 ORM 표준 JPA 프로그래밍 - 기본편/japshop",
+    "last_opened_file_path": "C:/Users/jongk/OneDrive/Desktop/김영한 로드맵/자바 ORM 표준 JPA 프로그래밍 - 기본편/ex1-hello-jpa-start",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,6 +101,8 @@
       <workItem from="1722697434997" duration="14000" />
       <workItem from="1722864056865" duration="186000" />
       <workItem from="1723374104339" duration="2047000" />
+      <workItem from="1723376539967" duration="81000" />
+      <workItem from="1723461121659" duration="1079000" />
     </task>
     <task id="LOCAL-00001" summary="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정">
       <created>1722258401608</created>
@@ -159,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723375300713</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="6. 다대일 매핑&#10;&#10;다대일 매핑을 @JoinTable 어노테이션을 활용하면 된다. 그러나 이렇게 하면 딱 FK값들만 설정되기에 컬럼을 추가할 수 없다. 그래서 아예 테이블을 하나 만들어 다대일,일대다 관계로 푸는게 맞다">
+      <created>1723376593497</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723376593497</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +180,7 @@
     <MESSAGE value="4. 필드 매핑&#10;&#10;필드 매핑에 대한 예제, 노션링크에 자세한 코드 설명이 있습니다." />
     <MESSAGE value="4. 키 매핑&#10;&#10;IDENTITY방식, TABLE방식, SEQUENCE방식, AUTO방식이 있다. &#10;IDENTITY방식은 DB 자체에서 키값을 설정하도록 일임하는것이기 때문에 INSERT하기전에는 키값을 알 수 없다. 그래서 JPA는 예외적으로 IDENTITY방식의 엔티티를 INSERT할 때 미리 INSERT문을 날린다.&#10;TABLE,SEQUENCE방식은 미리 allocationSize의 크기만큼 키값을 가져와 성능 최적화를 할 수 있다." />
     <MESSAGE value="5. 일대일 매핑&#10;&#10;일대일 매핑을 할 때 주테이블이 연관관계의 주인이 되는경우와 대상 테이블이 되는 경우 두가지를 살펴본다." />
-    <option name="LAST_COMMIT_MESSAGE" value="5. 일대일 매핑&#10;&#10;일대일 매핑을 할 때 주테이블이 연관관계의 주인이 되는경우와 대상 테이블이 되는 경우 두가지를 살펴본다." />
+    <MESSAGE value="6. 다대일 매핑&#10;&#10;다대일 매핑을 @JoinTable 어노테이션을 활용하면 된다. 그러나 이렇게 하면 딱 FK값들만 설정되기에 컬럼을 추가할 수 없다. 그래서 아예 테이블을 하나 만들어 다대일,일대다 관계로 푸는게 맞다" />
+    <option name="LAST_COMMIT_MESSAGE" value="6. 다대일 매핑&#10;&#10;다대일 매핑을 @JoinTable 어노테이션을 활용하면 된다. 그러나 이렇게 하면 딱 FK값들만 설정되기에 컬럼을 추가할 수 없다. 그래서 아예 테이블을 하나 만들어 다대일,일대다 관계로 푸는게 맞다" />
   </component>
 </project>

@@ -20,30 +20,21 @@ public class JpaMain {
 
         //code.....
         try {
-            // 저장
 
-            Team team = new Team();
-            team.setName("TeamA");
-            //   team.getMembers().add(member);
-            em.persist(team);
+            Book book = new Book();
+            book.setAuthor("aaaa");
+            book.setIsbn("bbbb");
+            book.setName("바람과함께사라지다");
+            book.setPrice(10000);
 
-            Member member = new Member();
-            member.setUsername("member1");
-            //   member.changeTeam(team);     //team의 값을 입력하지않음, 편의메소드는 한쪽에만 지정
-            em.persist(member);
+            em.persist(book);
 
-            team.addMember(member);
-//            team.getMembers().add(member);
+            em.flush();
+            em.clear();
 
-//            em.flush();
-//            em.clear();
+            Book book1 = em.find(Book.class, book.getId());
+            System.out.println("book1 = " + book1);
 
-            Team findTeam = em.find(Team.class, team.getId());  // 1차 캐시
-
-            System.out.println("+++++++++++++++");
-            List<Member> members = findTeam.getMembers();
-            System.out.println("findTeam = " + findTeam);
-            System.out.println("+++++++++++++++");
 
             // 커밋시점에 반영
             tx.commit();
