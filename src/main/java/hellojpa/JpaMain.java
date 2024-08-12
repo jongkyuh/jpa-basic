@@ -2,6 +2,7 @@ package hellojpa;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class JpaMain {
@@ -21,19 +22,16 @@ public class JpaMain {
         //code.....
         try {
 
-            Book book = new Book();
-            book.setAuthor("aaaa");
-            book.setIsbn("bbbb");
-            book.setName("바람과함께사라지다");
-            book.setPrice(10000);
+           Member member = new Member();
+           member.setUsername("user1");
+           member.setCreatedBy("kim");
+           member.setCreatedDate(LocalDateTime.now());
 
-            em.persist(book);
+            em.persist(member);
 
             em.flush();
             em.clear();
 
-            Item book1 = em.find(Item.class, book.getId());
-            System.out.println("book1 = " + book1);
 
 
             // 커밋시점에 반영
