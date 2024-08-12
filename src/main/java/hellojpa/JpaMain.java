@@ -32,7 +32,7 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            Book book1 = em.find(Book.class, book.getId());
+            Item book1 = em.find(Item.class, book.getId());
             System.out.println("book1 = " + book1);
 
 

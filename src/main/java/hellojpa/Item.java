@@ -3,9 +3,9 @@ package hellojpa;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED) //조인 전략
-@DiscriminatorColumn
-public class Item {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) //조인 전략
+//@DiscriminatorColumn
+public abstract class Item {
 
     @Id @GeneratedValue
     private Long id;
