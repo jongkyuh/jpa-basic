@@ -18,7 +18,7 @@ public class Member extends BaseEntity {
 //    @Column(name = "TEAM_ID")    //참조로 가져간게 아니라 그대로 가져갔다.
 //    private Long teamId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
@@ -44,7 +44,9 @@ public class Member extends BaseEntity {
         return team;
     }
 
-
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 
     public String getUsername() {
         return username;
@@ -54,11 +56,23 @@ public class Member extends BaseEntity {
         this.username = username;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public Locker getLocker() {
+        return locker;
     }
 
-//    @Override
+    public void setLocker(Locker locker) {
+        this.locker = locker;
+    }
+
+    public List<MemberProduct> getMemberProducts() {
+        return memberProducts;
+    }
+
+    public void setMemberProducts(List<MemberProduct> memberProducts) {
+        this.memberProducts = memberProducts;
+    }
+
+    //    @Override
 //    public String toString() {
 //        return "Member{" +
 //                "id=" + id +

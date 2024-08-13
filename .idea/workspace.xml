@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="8. 상속관계 매핑&#10;&#10;단일 테이블 전략과 각각의 단일 테이블 전략이있다. &#10;모든 데이터를 다 넣는 단일 테이블 전략은 조회에서 성능강점이 있을 수 있다. 그러나 각각 단일 테이블 전략은 실무에서도 사용하지 않는다.">
+    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="9. 매핑정보 상속&#10;&#10;공통으로 사용할 필드(속성)에 대해서 따로 가져다 쓰고싶을 때 사용한다. 엔티티가 아니기 때문에 조회에 사용할 수 없다.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hellojpa/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hellojpa/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hellojpa/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hellojpa/Team.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +105,8 @@
       <workItem from="1722864056865" duration="186000" />
       <workItem from="1723374104339" duration="2047000" />
       <workItem from="1723376539967" duration="81000" />
-      <workItem from="1723461121659" duration="3500000" />
+      <workItem from="1723461121659" duration="4128000" />
+      <workItem from="1723547879139" duration="5601000" />
     </task>
     <task id="LOCAL-00001" summary="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정">
       <created>1722258401608</created>
@@ -189,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723463886669</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="9. 매핑정보 상속&#10;&#10;공통으로 사용할 필드(속성)에 대해서 따로 가져다 쓰고싶을 때 사용한다. 엔티티가 아니기 때문에 조회에 사용할 수 없다.">
+      <created>1723465241622</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1723465241622</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +215,7 @@
     <MESSAGE value="6. 다대일 매핑&#10;&#10;다대일 매핑을 @JoinTable 어노테이션을 활용하면 된다. 그러나 이렇게 하면 딱 FK값들만 설정되기에 컬럼을 추가할 수 없다. 그래서 아예 테이블을 하나 만들어 다대일,일대다 관계로 푸는게 맞다" />
     <MESSAGE value="7. 상속관계 매핑&#10;&#10;조인전략으로 DTYPE컬럼과 함께 가장 객체지향적인 테이블 구조이고, 선호되어지는 방법이다." />
     <MESSAGE value="8. 상속관계 매핑&#10;&#10;단일 테이블 전략과 각각의 단일 테이블 전략이있다. &#10;모든 데이터를 다 넣는 단일 테이블 전략은 조회에서 성능강점이 있을 수 있다. 그러나 각각 단일 테이블 전략은 실무에서도 사용하지 않는다." />
-    <option name="LAST_COMMIT_MESSAGE" value="8. 상속관계 매핑&#10;&#10;단일 테이블 전략과 각각의 단일 테이블 전략이있다. &#10;모든 데이터를 다 넣는 단일 테이블 전략은 조회에서 성능강점이 있을 수 있다. 그러나 각각 단일 테이블 전략은 실무에서도 사용하지 않는다." />
+    <MESSAGE value="9. 매핑정보 상속&#10;&#10;공통으로 사용할 필드(속성)에 대해서 따로 가져다 쓰고싶을 때 사용한다. 엔티티가 아니기 때문에 조회에 사용할 수 없다." />
+    <option name="LAST_COMMIT_MESSAGE" value="9. 매핑정보 상속&#10;&#10;공통으로 사용할 필드(속성)에 대해서 따로 가져다 쓰고싶을 때 사용한다. 엔티티가 아니기 때문에 조회에 사용할 수 없다." />
   </component>
 </project>
