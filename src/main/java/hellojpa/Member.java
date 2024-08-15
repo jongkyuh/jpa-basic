@@ -9,28 +9,22 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Member extends BaseEntity {
+public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "MEMBER_ID")
     private Long id;
 
-//    @Column(name = "TEAM_ID")    //참조로 가져간게 아니라 그대로 가져갔다.
-//    private Long teamId;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
-
     @Column(name = "USERNAME")
     private String username;
 
-    @OneToOne
-    @JoinColumn(name = "LOCKER_ID")
-    private Locker locker;
+    // Period
+    @Embedded
+    private Period workPeriod;
 
-    @OneToMany(mappedBy = "member")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+    //Address
+    @Embedded
+    private Address homeAddress;
 
     public Long getId() {
         return id;
@@ -38,14 +32,6 @@ public class Member extends BaseEntity {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
     }
 
     public String getUsername() {
@@ -56,28 +42,19 @@ public class Member extends BaseEntity {
         this.username = username;
     }
 
-    public Locker getLocker() {
-        return locker;
+    public Period getWorkPeriod() {
+        return workPeriod;
     }
 
-    public void setLocker(Locker locker) {
-        this.locker = locker;
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
     }
 
-    public List<MemberProduct> getMemberProducts() {
-        return memberProducts;
+    public Address getHomeAddress() {
+        return homeAddress;
     }
 
-    public void setMemberProducts(List<MemberProduct> memberProducts) {
-        this.memberProducts = memberProducts;
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
     }
-
-    //    @Override
-//    public String toString() {
-//        return "Member{" +
-//                "id=" + id +
-//                ", team=" + team +
-//                ", username='" + username + '\'' +
-//                '}';
-//    }
 }

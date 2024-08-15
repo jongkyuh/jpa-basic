@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="10. 즉시 로딩과 지연로딩&#10;&#10;즉시 로딩은 한번에 연관된 엔티티값 까지 가져오기 때문에 편리해 보일 수 있지만, 예상치 못한 쿼리가 나갈수 있고 특히 JPQL에서 문제가 많이 발생할 수 있다. 그래서 모든 연관관계는 LAZY로 설정하고 JPQL에서도 이 문제를 즉시로딩처럼 사용 할수 있는 방법은 있다. 추후 공부">
+    <list default="true" id="e9d76ea2-2d98-4d4d-9ec7-ba3fc24e1e3a" name="Changes" comment="11. 영속성 전이와 고아 객체&#10;&#10;cascade를 통해서 같이 제거되거나 추가될때 함계 persist,removce 될수 있으며 orphanremoval = ture하게 되면 컬렉션에서 제거 될 때 자식 엔티티가 삭제 된다.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hellojpa/JpaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hellojpa/JpaMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/Locker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Locker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,22 +43,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jongk/OneDrive/Desktop/김영한 로드맵/자바 ORM 표준 JPA 프로그래밍 - 기본편/ex1-hello-jpa-start&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/jongk/OneDrive/Desktop/김영한 로드맵/자바 ORM 표준 JPA 프로그래밍 - 기본편/ex1-hello-jpa-start",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="hellojpa" />
@@ -105,7 +107,8 @@
       <workItem from="1723376539967" duration="81000" />
       <workItem from="1723461121659" duration="4128000" />
       <workItem from="1723547879139" duration="6266000" />
-      <workItem from="1723636275565" duration="2290000" />
+      <workItem from="1723636275565" duration="2621000" />
+      <workItem from="1723692340134" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="1. maven 프로젝트 생성&#10;&#10;스프링 없이 JPA만 순수하게 학습하기위해 먼저 maven 프로젝트를 생성하여 기본 설정을 세팅합니다. H2데이터베이스를 사용합니다. 추후에 스프링을 적용예정">
       <created>1722258401608</created>
@@ -205,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723554190121</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="11. 영속성 전이와 고아 객체&#10;&#10;cascade를 통해서 같이 제거되거나 추가될때 함계 persist,removce 될수 있으며 orphanremoval = ture하게 되면 컬렉션에서 제거 될 때 자식 엔티티가 삭제 된다.">
+      <created>1723639395291</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1723639395291</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +233,7 @@
     <MESSAGE value="8. 상속관계 매핑&#10;&#10;단일 테이블 전략과 각각의 단일 테이블 전략이있다. &#10;모든 데이터를 다 넣는 단일 테이블 전략은 조회에서 성능강점이 있을 수 있다. 그러나 각각 단일 테이블 전략은 실무에서도 사용하지 않는다." />
     <MESSAGE value="9. 매핑정보 상속&#10;&#10;공통으로 사용할 필드(속성)에 대해서 따로 가져다 쓰고싶을 때 사용한다. 엔티티가 아니기 때문에 조회에 사용할 수 없다." />
     <MESSAGE value="10. 즉시 로딩과 지연로딩&#10;&#10;즉시 로딩은 한번에 연관된 엔티티값 까지 가져오기 때문에 편리해 보일 수 있지만, 예상치 못한 쿼리가 나갈수 있고 특히 JPQL에서 문제가 많이 발생할 수 있다. 그래서 모든 연관관계는 LAZY로 설정하고 JPQL에서도 이 문제를 즉시로딩처럼 사용 할수 있는 방법은 있다. 추후 공부" />
-    <option name="LAST_COMMIT_MESSAGE" value="10. 즉시 로딩과 지연로딩&#10;&#10;즉시 로딩은 한번에 연관된 엔티티값 까지 가져오기 때문에 편리해 보일 수 있지만, 예상치 못한 쿼리가 나갈수 있고 특히 JPQL에서 문제가 많이 발생할 수 있다. 그래서 모든 연관관계는 LAZY로 설정하고 JPQL에서도 이 문제를 즉시로딩처럼 사용 할수 있는 방법은 있다. 추후 공부" />
+    <MESSAGE value="11. 영속성 전이와 고아 객체&#10;&#10;cascade를 통해서 같이 제거되거나 추가될때 함계 persist,removce 될수 있으며 orphanremoval = ture하게 되면 컬렉션에서 제거 될 때 자식 엔티티가 삭제 된다." />
+    <option name="LAST_COMMIT_MESSAGE" value="11. 영속성 전이와 고아 객체&#10;&#10;cascade를 통해서 같이 제거되거나 추가될때 함계 persist,removce 될수 있으며 orphanremoval = ture하게 되면 컬렉션에서 제거 될 때 자식 엔티티가 삭제 된다." />
   </component>
 </project>

@@ -24,22 +24,11 @@ public class JpaMain {
 
         //code.....
         try {
-            Child child1 = new Child();
-            Child child2 = new Child();
+            Member member = new Member();
+            member.setUsername("hello");
+            member.setHomeAddress(new Address("city","street","100"));
 
-            Parent parent = new Parent();
-            parent.addChild(child1);
-            parent.addChild(child2);
-
-            em.persist(parent);     // child도 persist된다.
-
-            em.flush();
-            em.clear();
-
-            Parent findParent = em.find(Parent.class, parent.getId());
-          //  findParent.getChildList().remove(0);    // 0번째 인덱스 child 삭제, 실제 db에서 remove된다.
-
-            em.remove(findParent);  // child도 같이 remove
+            em.persist(member);
 
 
             // 커밋시점에 반영
