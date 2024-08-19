@@ -6,6 +6,7 @@ import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 public class JpaMain {
 
@@ -24,11 +25,39 @@ public class JpaMain {
 
         //code.....
         try {
+
             Member member = new Member();
-            member.setUsername("hello");
-            member.setHomeAddress(new Address("city","street","100"));
+            member.setUsername("member1");
+            member.setHomeAddress(new Address("homecity","street","zipcode"));
+
+            //
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("피자");
+            member.getFavoriteFoods().add("족발");
+
+            member.getAddressHistory().add(new AddressEntity("old1","street","zipcode"));
+            member.getAddressHistory().add(new AddressEntity("old2","street","zipcode"));
 
             em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            System.out.println("===============Star==============");
+            Member findMember = em.find(Member.class, member.getId());
+
+            // homecity -> newcity
+            // 값타입의 필드만 바꾸는 것이 아니라 통으로 바꿔야 한다.
+//            Address a = findMember.getHomeAddress();
+//            findMember.setHomeAddress(new Address("newcity",a.getStreet(),a.getZipzode()));
+
+            //치킨 -> 한식 으로 변경
+//            findMember.getFavoriteFoods().remove("치킨");
+//            findMember.getFavoriteFoods().add("한식");
+
+
+//            findMember.getAddressHistory().remove(new AddressEntity("old1","street","zipcode"));
+//            findMember.getAddressHistory().add(new AddressEntity("newCity1","street","zipcode"));
 
 
             // 커밋시점에 반영
